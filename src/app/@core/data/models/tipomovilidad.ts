@@ -1,0 +1,10 @@
+
+export class Tipomovilidad {
+  Id: number;
+  Nombre: string;
+  Descripcion: string;
+  Codigoabreviacion: string;
+  Activo: boolean;
+  Numeroorden: number;
+  Entrante: boolean;
+}

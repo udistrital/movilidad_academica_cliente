@@ -1,0 +1,81 @@
+{
+  "HOME": {
+    "TITLE": "MOVILIDAD_ACADEMICA",
+    "SELECT": "Cambiar idioma",
+    "LOGIN": "Iniciar sesion",
+    "LOGOUT": "Cerra sesion"
+  },
+  "MENU": {
+    "dashboard": "Inicio",
+    "movilidad": {
+      "movilidad": "movilidad",
+      "lista_movilidad": "lista movilidad",
+      "crud_movilidad": "Crud movilidad"
+    },
+    "tipocategoria": {
+      "tipocategoria": "tipocategoria",
+      "lista_tipocategoria": "lista tipocategoria",
+      "crud_tipocategoria": "Crud tipocategoria"
+    },
+    "tipomovilidad": {
+      "tipomovilidad": "tipomovilidad",
+      "lista_tipomovilidad": "lista tipomovilidad",
+      "crud_tipomovilidad": "Crud tipomovilidad"
+    },
+  
+    "auth": {
+      "auth": "Autenticacion",
+      "login": "Login",
+      "register": "Registro",
+      "request-password": "Recuperar Password",
+      "reset-password": "Reiniciar Password"
+    }
+  },
+  "GLOBAL": {
+    "movilidad": "movilidad",
+    "placeholder_movilidad": "ej: movilidad",
+    "id": "id",
+    "placeholder_id": "ej: id",
+    "presupuesto": "presupuesto",
+    "placeholder_presupuesto": "ej: presupuesto",
+    "fechainicio": "fechainicio",
+    "placeholder_fechainicio": "ej: fechainicio",
+    "fechafinal": "fechafinal",
+    "placeholder_fechafinal": "ej: fechafinal",
+    "persona": "persona",
+    "placeholder_persona": "ej: persona",
+    "convenio": "convenio",
+    "placeholder_convenio": "ej: convenio",
+    "idtipomovilidad": "idtipomovilidad",
+    "placeholder_idtipomovilidad": "ej: idtipomovilidad",
+    "idtipocategoria": "idtipocategoria",
+    "placeholder_idtipocategoria": "ej: idtipocategoria",
+    "tipocategoria": "tipocategoria",
+    "placeholder_tipocategoria": "ej: tipocategoria",
+    "nombre": "nombre",
+    "placeholder_nombre": "ej: nombre",
+    "descripcion": "descripcion",
+    "placeholder_descripcion": "ej: descripcion",
+    "codigoabreviacion": "codigoabreviacion",
+    "placeholder_codigoabreviacion": "ej: codigoabreviacion",
+    "activo": "activo",
+    "placeholder_activo": "ej: activo",
+    "numeroorden": "numeroorden",
+    "placeholder_numeroorden": "ej: numeroorden",
+    "tipomovilidad": "tipomovilidad",
+    "placeholder_tipomovilidad": "ej: tipomovilidad",
+    "entrante": "entrante",
+    "placeholder_entrante": "ej: entrante",
+    "aceptar": "aceptar",
+    "cancelar": "cancelar",
+    "salir": "salir",
+    "eliminar": "eliminar",
+    "actualizar": "actualizar",
+    "crear": "crear",
+    "registrar": "registrar",
+    "guardar" : "guardar",
+    "formulario": "formulario",
+    "lista": "lista",
+    "regresar": "regresar"
+  }
+}
