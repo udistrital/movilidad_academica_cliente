@@ -96,7 +96,7 @@ export class ListTipocategoriaComponent implements OnInit {
   }
 
   loadData(): void {
-    this.movilidadAcademicaService.get('tipocategoria/?limit=0').subscribe(res => {
+    this.movilidadAcademicaService.get('tipo_categoria/?limit=0').subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);
