@@ -3,4 +3,5 @@ import { ActionReducerMap } from '@ngrx/store';
 import { ListReducer } from './reducers/list.reducer';
 
 export const rootReducer: ActionReducerMap<IAppState> = {
+    listPais: ListReducer.ListReducerPais,
 }

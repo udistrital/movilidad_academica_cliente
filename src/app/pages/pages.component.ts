@@ -25,7 +25,7 @@ export class PagesComponent implements OnInit {
   hijo2: MenuItem;
   rol: String;
 
-  constructor(private autenticacion: ImplicitAutenticationService, private translate: TranslateService,  /* private menu_ws: MenuService */) { }
+  constructor(private autenticacion: ImplicitAutenticationService, private translate: TranslateService  /* private menu_ws: MenuService */) { }
 
   ngOnInit() {
     if (this.autenticacion.live()) {
