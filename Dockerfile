@@ -1,8 +1,9 @@
-FROM python:3.0
-RUN pip install awscli
-WORKDIR /
-COPY entrypoint.sh entrypoint.sh
-COPY main main
-COPY conf/app.conf conf/app.conf
-RUN chmod +x main entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+# Setup and build client
+
+FROM node:11-alpine as client
+
+WORKDIR /usr/app/client
+COPY client/package*.json ./
+RUN npm install -qy
+COPY client/ ./
+RUN npm run build
