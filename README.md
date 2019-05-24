@@ -12,7 +12,7 @@
 ## Dependencias Utilizadas
 - **Nebular:** (https://github.com/akveo/nebular)
 - **Angular 6**
-- **Boostrap 4** 
+- **Bootstrap 4** 
 
 ### API MID
 - **movilidad_academica_mid:** este [api](https://github.com/udistrital/movilidad_academica_mid). se encarga de gestionar la logica de negocio relacionada con el manejo de informacion relacionada con los estudiantes/docentes entrantes y salientes.
