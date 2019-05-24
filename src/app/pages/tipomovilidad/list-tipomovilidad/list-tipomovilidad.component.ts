@@ -103,7 +103,7 @@ export class ListTipomovilidadComponent implements OnInit {
   }
 
   loadData(): void {
-    this.movilidadAcademicaService.get('tipomovilidad/?limit=0').subscribe(res => {
+    this.movilidadAcademicaService.get('tipo_movilidad/?limit=0').subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);
