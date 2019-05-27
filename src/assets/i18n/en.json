@@ -1,6 +1,6 @@
 {
   "HOME": {
-    "TITLE": "MOVILIDAD_ACADEMICA",
+    "TITLE": "MOVILIDAD ACADEMICA",
     "SELECT": "Cambiar idioma",
     "LOGIN": "Iniciar sesion",
     "LOGOUT": "Cerra sesion"
@@ -11,6 +11,11 @@
       "movilidad": "movilidad",
       "lista_movilidad": "lista movilidad",
       "crud_movilidad": "Crud movilidad"
+    },
+    "movilidad_academica": {
+      "movilidad_academica": "movilidad academica",
+      "lista_movilidad_academica": "lista movilidad academica",
+      "crud_movilidad_academica": "Crud movilidad academica"
     },
     "tipocategoria": {
       "tipocategoria": "tipocategoria",
@@ -76,6 +81,32 @@
     "guardar" : "guardar",
     "formulario": "formulario",
     "lista": "lista",
-    "regresar": "regresar"
+    "regresar": "regresar",
+    "movilidad_academica": "movilidad_academica",
+    "placeholder_movilidad_academica": "ej: movilidad_academica",
+    "apellido": "apellido",
+    "placeholder_apellido": "ej: apellido",
+    "identificacion": "identificacion",
+    "placeholder_identificacion": "ej: identificacion",
+    "tipodocumento": "tipodocumento",
+    "placeholder_tipodocumento": "ej: tipodocumento",
+    "tipopersona": "tipopersona",
+    "placeholder_tipopersona": "ej: tipopersona",
+    "telefono": "telefono",
+    "placeholder_telefono": "ej: telefono",
+    "direccion": "direccion",
+    "placeholder_direccion": "ej: direccion",
+    "pais": "pais",
+    "placeholder_pais": "ej: pais",
+    "nivelacademico": "nivelacademico",
+    "placeholder_nivelacademico": "ej: nivelacademico",
+    "programaacademico": "programaacademico",
+    "placeholder_programaacademico": "ej: programaacademico",
+    "organizacion": "organizacion",
+    "placeholder_organizacion": "ej: organizacion",
+    "tipoconvenio": "tipoconvenio",
+    "placeholder_tipoconvenio": "ej: tipoconvenio",
+    "nit": "nit",
+    "placeholder_nit": "ej: nit"
   }
 }
