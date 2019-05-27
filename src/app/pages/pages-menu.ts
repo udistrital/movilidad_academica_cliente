@@ -63,4 +63,22 @@ export const MENU_ITEMS: MenuItem[] = [
   //     },
   //   ],
   // },
+  {
+    title: 'Movilidad Academica',
+    icon: 'nb-compose',
+    link: '/pages/movilidad_academica',
+    key: 'movilidad_academica',
+    children: [
+      {
+        title: 'Lista Movilidad Academica',
+        link: '/pages/movilidad_academica/list-movilidad_academica',
+        key: 'lista_movilidad_academica',
+      },
+      {
+        title: 'CRUD Movilidad Academica',
+        link: '/pages/movilidad_academica/crud-movilidad_academica',
+        key: 'crud_movilidad_academica',
+      },
+    ],
+  },
 ]
