@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Config } from './../../app-config';
+import { GENERAL } from './../../app-config';
 
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
 
-const path = Config.LOCAL.MOVILIDAD_ACADEMICA_SERVICE;
+const path = GENERAL.ENTORNO.MOVILIDAD_ACADEMICA_SERVICE;
 
 
 @Injectable()
