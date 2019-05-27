@@ -67,7 +67,7 @@ export class CrudMovilidadComponent implements OnInit {
 
   loadOptionsIdtipomovilidad(): void {
     let idtipomovilidad: Array<any> = [];
-      this.movilidadAcademicaService.get('tipomovilidad/?limit=0')
+      this.movilidadAcademicaService.get('tipo_movilidad/?limit=0')
         .subscribe(res => {
           if (res !== null) {
             idtipomovilidad = <Array<Tipomovilidad>>res;
@@ -77,7 +77,7 @@ export class CrudMovilidadComponent implements OnInit {
   }
   loadOptionsIdtipocategoria(): void {
     let idtipocategoria: Array<any> = [];
-      this.movilidadAcademicaService.get('tipocategoria/?limit=0')
+      this.movilidadAcademicaService.get('tipo_categoria/?limit=0')
         .subscribe(res => {
           if (res !== null) {
             idtipocategoria = <Array<Tipocategoria>>res;
