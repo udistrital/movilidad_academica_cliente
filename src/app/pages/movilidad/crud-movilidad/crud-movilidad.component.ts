@@ -4,6 +4,7 @@ import { Tipocategoria } from './../../../@core/data/models/tipocategoria';
 import { Movilidad } from './../../../@core/data/models/movilidad';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MovilidadAcademicaService } from '../../../@core/data/movilidad_academica.service';
+import { MovilidadMidService } from '../../../@core/data/movilidad_mid.service';
 import { FORM_MOVILIDAD } from './form-movilidad';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -32,7 +33,16 @@ export class CrudMovilidadComponent implements OnInit {
   regMovilidad: any;
   clean: boolean;
 
-  constructor(private translate: TranslateService, private movilidadAcademicaService: MovilidadAcademicaService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService,
+    private movilidadAcademicaService: MovilidadAcademicaService,
+    private movilidadMidService: MovilidadMidService,
+    private toasterService: ToasterService) {
+      this.movilidadMidService.get('convenio/GetConvenio')
+      .subscribe(res => {
+        if (res !== null) {
+           console.info(res);
+        }
+      });
     this.formMovilidad = FORM_MOVILIDAD;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
