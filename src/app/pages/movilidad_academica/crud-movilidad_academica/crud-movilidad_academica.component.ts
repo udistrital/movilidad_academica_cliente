@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
 @Component({
-  selector: 'ngx-crud-movilidad-Academica',
+  selector: 'ngx-crud-movilidad',
   templateUrl: './crud-movilidad_academica.component.html',
   styleUrls: ['./crud-movilidad_academica.component.scss'],
 })

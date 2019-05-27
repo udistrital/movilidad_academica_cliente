@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
 @Component({
-  selector: 'ngx-list-movilidad-Academica',
+  selector: 'ngx-list-movilidad',
   templateUrl: './list-movilidad_academica.component.html',
   styleUrls: ['./list-movilidad_academica.component.scss'],
   })
