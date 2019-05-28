@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
 @Component({
-  selector: 'ngx-crud-movilidad',
+  selector: 'ngx-crud-movili',
   templateUrl: './crud-movilidad.component.html',
   styleUrls: ['./crud-movilidad.component.scss'],
 })

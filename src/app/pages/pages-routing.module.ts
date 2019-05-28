@@ -13,6 +13,18 @@ const routes: Routes = [{
     component: DashboardComponent,
     },
     {
+      path: 'movilidad_academica',
+      loadChildren: './movilidad_academica/movilidad_academica.module#MovilidadAcademicaModule',
+      },
+      {
+      path: 'tipodocumento',
+      loadChildren: './tipodocumento/tipodocumento.module#TipodocumentoModule',
+      },
+      {
+      path: 'programaacademico',
+      loadChildren: './programaacademico/programaacademico.module#ProgramaacademicoModule',
+      },
+    {
     path: 'movilidad',
     loadChildren: './movilidad/movilidad.module#MovilidadModule',
     },
@@ -20,6 +32,26 @@ const routes: Routes = [{
     path: 'tipocategoria',
     loadChildren: './tipocategoria/tipocategoria.module#TipocategoriaModule',
     },
+    {
+      path: 'nivelacademico',
+      loadChildren: './nivelacademico/nivelacademico.module#NivelacademicoModule',
+      },
+      {
+      path: 'convenio',
+      loadChildren: './convenio/convenio.module#ConvenioModule',
+      },
+      {
+      path: 'organizacion',
+      loadChildren: './organizacion/organizacion.module#OrganizacionModule',
+      },
+      {
+      path: 'pais',
+      loadChildren: './pais/pais.module#PaisModule',
+      },
+      {
+      path: 'tipoconvenio',
+      loadChildren: './tipoconvenio/tipoconvenio.module#TipoconvenioModule',
+      },
     {
     path: 'tipomovilidad',
     loadChildren: './tipomovilidad/tipomovilidad.module#TipomovilidadModule',
