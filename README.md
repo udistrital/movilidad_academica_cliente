@@ -1,10 +1,35 @@
-## Configuracion del proyecto
+# :ledger: Admin - Movilidad Académica ,CERI
+Este repositorio se comporta como microservicio del proyecto de Movilidad_academica. En este repositorio se define la tecnología que se renderizara del lado del cliente.
+Como componentes básicos cuenta con:
+ * **ngxAdmin** ~ [link_documentación](https://github.com/akveo/ngx-admin)
+ * **Angular 6.0**
+ * **Bootstrap 4**
+ * **Nebular Components**
+
+## :writing_hand: Mockups
+Los siguientes mockups grafican la estructura general de la aplicación, como sus principales vistas.
+Vista General: 
+![Vista General](/assets/general.png "Mockup Vista General")
+Vista Formularios: 
+![Vista Formularios](/assets/Form.png "Mockup Vista Formularios")
+Vista Listados: 
+![Vista Frmularios](/assets/Listado.png "Mockup Vista Listados")
+
+## :paintbrush: Paleta de colores
+Basados en la paleta de colores de la plataforma acual del CERI y la página oficial de la Universidad Distrital se realiza la siguiente paleta de colores:
+Paleta CERI: 
+![Paleta Colores CERI](/assets/PaletaCERI.png "Paleta Colores CERI")
+Paleta Colores UDistrital: 
+![Paleta Colores UDistrital](/assets/PaletaUDistrital.png "Paleta Colores UDIstrital")
+Paleta de Colores Elegida: 
+![Paleta Colores PLataforma](/assets/PaletaMovilidad.png "Paleta Colores Elegida")
+## 🛠️ Configuracion del proyecto
 
 - Clonar el proyecto del repositorio de git, configurar el repositorio remoto (github), e instalarlo localmente con 
 ```shell 
     npm install
 ```
-- Correr el proyecto para verificar que las dependencias estan correctamente instaladas
+- 🚀 Correr el proyecto para verificar que las dependencias estan correctamente instaladas
 
 ```shell 
     ng serve
