@@ -6,7 +6,7 @@ import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-t
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
-import { Convenio } from'../../../@core/data/models/convenio'
+import { Convenio } from '../../../@core/data/models/convenio'
 
 
 @Component({
@@ -23,7 +23,10 @@ export class ListConvenioComponent implements OnInit {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private translate: TranslateService, private movilidadAcademicaService: MovilidadAcademicaService, private toasterService: ToasterService, private movilidadMidService: MovilidadMidService,) {
+  constructor(private translate: TranslateService,
+    private movilidadAcademicaService: MovilidadAcademicaService,
+    private toasterService: ToasterService,
+    private movilidadMidService: MovilidadMidService ) {
     this.loadData();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
     });
@@ -57,7 +60,7 @@ export class ListConvenioComponent implements OnInit {
         Organizacion: {
           title: this.translate.instant('GLOBAL.organizacion'),
           // type: 'Organizacion;',
-          valuePrepareFunction: (value) => {            
+          valuePrepareFunction: (value) => {           
             return value.Nombre;
           },
         },
@@ -87,17 +90,16 @@ export class ListConvenioComponent implements OnInit {
     this.convenios=[];
     this.movilidadMidService.get('convenio/GetConvenio')
     .subscribe((res: Convenio[]) => {
-      console.log(res);
       if (Object.keys(res[0]).length > 0) {
         this.convenios = res;
         const data = <Array<any>>res;
         this.source.load(data);
       }
     }, (error) => {
-      alert("Ocurrio un error cargando los equipos");
+      alert('Ocurrio un error cargando los convenios');
     })
-      
-    this.cargarCampos();    
+
+    this.cargarCampos();
   }
 
   ngOnInit() {
