@@ -5,12 +5,14 @@
 // import angular material theme
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
+// Frank Ruhl Font
+@import url(https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap);
 
 // which themes you what to enable (empty to enable all)
 $nb-enabled-themes: (default, cosmic);
 //0095DD F2F2F2
-$primary-color-theme: #2f5573;
-$secundary-color-theme: #f2f2f2;
+$primary-color-theme: #fdb400;
+$secundary-color-theme: #9a0a18;
 $nb-enabled-themes: (default, cosmic, corporate);
 
 $nb-themes: nb-register-theme((
@@ -46,32 +48,32 @@ $nb-themes: nb-register-theme((
   font-weight-ultra-bold: 600,
   //general
   padding: 1rem,
-  font-size: 0.9rem,
+  font-size: 0.8rem,
   margin: 1rem,
   layout-padding: 2rem 0.2rem 3rem,
 
-  sidebar-bg: #212121,
+  sidebar-bg: rgba(154, 10, 24, 1.0),
   sidebar-fg: $secundary-color-theme,
   sidebar-shadow: none,
   sidebar-padding: 0.3rem,
   sidebar-margin-top: 0,
   tabs-fg: gray,
 
-  color-fg: #777777,
-  menu-icon-color: $secundary-color-theme,
+  color-fg: #ffc911,
+  menu-icon-color: #fff,
   card-shadow: 0 2px 8px 0 rgba(43, 43, 43, 0.494),
 
-  menu-bg: #212121,
-  menu-fg: $secundary-color-theme,
-  menu-active-bg: #f2f2f2,
-  menu-active-fg: #212121,
-  menu-font-size: 0.8rem,
+  menu-bg: #252525,
+  menu-fg: #fff,
+  menu-active-bg: #fdb400,
+  menu-active-fg: #fff,
+  menu-font-size: 0.9rem,
   menu-item-separator: #212121,
 
-  menu-submenu-bg: #24292e,
-  menu-submenu-fg: $secundary-color-theme,
-  menu-submenu-active-bg: #24292e,
-  menu-submenu-active-fg: $primary-color-theme,
+  menu-submenu-bg: #404040,
+  menu-submenu-fg: #fff,
+  menu-submenu-active-bg: #686868,
+  menu-submenu-active-fg: #ffc911,
   menu-submenu-item-border-width: 0,
   menu-submenu-item-padding: none,
   menu-submenu-item-container-padding: none,
@@ -83,11 +85,11 @@ $nb-themes: nb-register-theme((
 
 
   //header
-  header-font-family: 'sans-serif',
+  header-font-family:'Frank Ruhl Libre',
   header-font-size: 0.7rem,
   header-height: 3.5rem,
   header-padding: none,
-  header-fg: $secundary-color-theme,
+  header-fg: #000,
   header-bg: $primary-color-theme,
   header-shadow: none,
 
