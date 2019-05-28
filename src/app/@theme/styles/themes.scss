@@ -35,8 +35,8 @@ $nb-themes: nb-register-theme((
   smart-table-paging-border-width: 0.5,
   smart-table-filter-padding: 0.1rem 0.1rem,
   //form-control
-  form-control-placeholder-font-size: 0.8rem,
-  form-control-font-size: 0.8rem,
+  form-control-placeholder-font-size: 1.2rem,
+  form-control-font-size: 1.0rem,
   form-control-border-width: 1px,
   form-control-border-radius: 0.1rem,
   //fonts
@@ -95,6 +95,8 @@ $nb-themes: nb-register-theme((
 
   footer-shadow: none,
 
+  //buttons
+  color-success: #9a0a18,
 
   switcher-background: $primary-color-theme,
   switcher-background-percentage: 14%,
