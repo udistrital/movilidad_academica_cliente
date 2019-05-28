@@ -6,7 +6,8 @@ Como componentes básicos cuenta con:
  * **Bootstrap 4**
  * **Nebular Components**
 
-## :writing_hand: Mockups
+<summary>## :writing_hand: Mockups</summary>
+<details>
 Los siguientes mockups grafican la estructura general de la aplicación, como sus principales vistas.
 Vista General: 
 ![Vista General](/assets/general.png "Mockup Vista General")
@@ -14,8 +15,9 @@ Vista Formularios:
 ![Vista Formularios](/assets/Form.png "Mockup Vista Formularios")
 Vista Listados: 
 ![Vista Frmularios](/assets/Listado.png "Mockup Vista Listados")
-
-## :paintbrush: Paleta de colores
+</details>
+<summary>## :paintbrush: Paleta de colores</summary>
+<details>
 Basados en la paleta de colores de la plataforma acual del CERI y la página oficial de la Universidad Distrital se realiza la siguiente paleta de colores:
 Paleta CERI: 
 ![Paleta Colores CERI](/assets/PaletaCERI.png "Paleta Colores CERI")
@@ -23,6 +25,8 @@ Paleta Colores UDistrital:
 ![Paleta Colores UDistrital](/assets/PaletaUDistrital.png "Paleta Colores UDIstrital")
 Paleta de Colores Elegida: 
 ![Paleta Colores PLataforma](/assets/PaletaMovilidad.png "Paleta Colores Elegida")
+</details>
+
 ## 🛠️ Configuracion del proyecto
 
 - Clonar el proyecto del repositorio de git, configurar el repositorio remoto (github), e instalarlo localmente con 
