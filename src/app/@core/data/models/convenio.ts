@@ -1,10 +1,10 @@
 import { Organizacion } from './organizacion';
-import { Tipoconvenio } from './tipoconvenio';
+import { TipoConvenio } from './tipoconvenio';
 import { Pais } from './pais';
 
 export class Convenio {
   Id: number;
   Organizacion: Array<Organizacion>;
-  Tipoconvenio: Array<Tipoconvenio>;
+  TipoConvenio: Array<TipoConvenio>;
   Pais: Array<Pais>;
 }
