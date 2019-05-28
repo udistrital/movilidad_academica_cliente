@@ -6,27 +6,26 @@ Como componentes básicos cuenta con:
  * **Bootstrap 4**
  * **Nebular Components**
 
-<summary>## :writing_hand: Mockups</summary>
+<summary><h2> :writing_hand: Mockups</h2></summary>
 <details>
-Los siguientes mockups grafican la estructura general de la aplicación, como sus principales vistas.
-Vista General: 
-![Vista General](/assets/general.png "Mockup Vista General")
-Vista Formularios: 
-![Vista Formularios](/assets/Form.png "Mockup Vista Formularios")
-Vista Listados: 
-![Vista Frmularios](/assets/Listado.png "Mockup Vista Listados")
+  Los siguientes mockups grafican la estructura general de la aplicación, como sus principales vistas.
+  Vista General: 
+  <img src="/assets/general.png" alt="Mockup Vista General" />
+  Vista Formularios: 
+  <img src="/assets/Form.png" alt="Mockup Vista Formularios" />
+  Vista Listados: 
+  <img src="/assets/Listado.png" alt="Mockup Vista Listados" />
 </details>
-<summary>## :paintbrush: Paleta de colores</summary>
+<summary><h2> :paintbrush: Paleta de colores</h2></summary>
 <details>
-Basados en la paleta de colores de la plataforma acual del CERI y la página oficial de la Universidad Distrital se realiza la siguiente paleta de colores:
-Paleta CERI: 
-![Paleta Colores CERI](/assets/PaletaCERI.png "Paleta Colores CERI")
-Paleta Colores UDistrital: 
-![Paleta Colores UDistrital](/assets/PaletaUDistrital.png "Paleta Colores UDIstrital")
-Paleta de Colores Elegida: 
-![Paleta Colores PLataforma](/assets/PaletaMovilidad.png "Paleta Colores Elegida")
+  Basados en la paleta de colores de la plataforma acual del CERI y la página oficial de la Universidad Distrital se realiza la siguiente paleta de colores:
+  Paleta CERI:
+  <img src="/assets/PaletaCERI.png" alt="Paleta Colores CERI" />
+  Paleta Colores UDistrital:
+  <img src="/assets/PaletaUDistrital.png" alt="Paleta Colores UDIstrital" />
+  Paleta de Colores Elegida:
+  <img src="/assets/PaletaMovilidad.png" alt="Paleta Colores Elegida" />
 </details>
-
 ## 🛠️ Configuracion del proyecto
 
 - Clonar el proyecto del repositorio de git, configurar el repositorio remoto (github), e instalarlo localmente con 
