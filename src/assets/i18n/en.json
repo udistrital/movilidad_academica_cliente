@@ -27,6 +27,11 @@
       "lista_tipomovilidad": "lista tipomovilidad",
       "crud_tipomovilidad": "Crud tipomovilidad"
     },
+    "convenio": {
+      "convenio": "convenio",
+      "lista_convenio": "lista convenio",
+      "crud_convenio": "Crud convenio"
+    },
   
     "auth": {
       "auth": "Autenticacion",
