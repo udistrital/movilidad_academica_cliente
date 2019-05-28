@@ -81,4 +81,22 @@ export const MENU_ITEMS: MenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Convenio',
+    icon: 'nb-compose',
+    link: '/pages/convenio',
+    key: 'convenio',
+    children: [
+      {
+        title: 'Lista Convenio',
+        link: '/pages/convenio/list-convenio',
+        key: 'lista_convenio',
+      },
+      {
+        title: 'CRUD Convenio',
+        link: '/pages/convenio/crud-convenio',
+        key: 'crud_convenio',
+      },
+    ],
+  },
 ]
