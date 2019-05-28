@@ -60,7 +60,7 @@ export class ListConvenioComponent implements OnInit {
         Organizacion: {
           title: this.translate.instant('GLOBAL.organizacion'),
           // type: 'Organizacion;',
-          valuePrepareFunction: (value) => {           
+          valuePrepareFunction: (value) => {
             return value.Nombre;
           },
         },
@@ -87,7 +87,7 @@ export class ListConvenioComponent implements OnInit {
   }
 
   loadData(): void {
-    this.convenios=[];
+    this.convenios = [];
     this.movilidadMidService.get('convenio/GetConvenio')
     .subscribe((res: Convenio[]) => {
       if (Object.keys(res[0]).length > 0) {
