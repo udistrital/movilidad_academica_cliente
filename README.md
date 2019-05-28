@@ -29,6 +29,7 @@ Como componentes básicos cuenta con:
 <summary><h2> 🛠️ Configuracion del proyecto</h2></summary>
 <details>
   - Clonar el proyecto del repositorio de git, configurar el repositorio remoto (github), e instalarlo localmente con 
+  
   ```shell 
       npm install
   ```
@@ -41,7 +42,7 @@ Como componentes básicos cuenta con:
 <summary><h2> :pick: Dependencias Utilizadas</h2></summary>
 <details>
     Dependencias incluidas:
-    
+
   - **Nebular:** (https://github.com/akveo/nebular)
   - **Angular 6**
   - **Bootstrap 4** 
