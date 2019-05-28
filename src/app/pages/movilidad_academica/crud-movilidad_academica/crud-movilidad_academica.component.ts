@@ -1,7 +1,7 @@
-import { Tipodocumento } from './../../../@core/data/models/tipodocumento';
-import { Pais } from './../../../@core/data/models/pais';
-import { Nivelacademico } from './../../../@core/data/models/nivelacademico';
-import { Programaacademico } from './../../../@core/data/models/programaacademico';
+// import { Tipodocumento } from './../../../@core/data/models/tipodocumento';
+// import { Pais } from './../../../@core/data/models/pais';
+// import { Nivelacademico } from './../../../@core/data/models/nivelacademico';
+// import { Programaacademico } from './../../../@core/data/models/programaacademico';
 import { Tipomovilidad } from './../../../@core/data/models/tipomovilidad';
 import { Tipocategoria } from './../../../@core/data/models/tipocategoria';
 
