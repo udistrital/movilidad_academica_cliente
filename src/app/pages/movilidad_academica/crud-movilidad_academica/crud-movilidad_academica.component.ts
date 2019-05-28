@@ -8,6 +8,7 @@ import { Tipocategoria } from './../../../@core/data/models/tipocategoria';
 import { MovilidadAcademica } from './../../../@core/data/models/movilidad_academica';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MovilidadAcademicaService } from '../../../@core/data/movilidad_academica.service';
+import { MovilidadMidService } from '../../../@core/data/movilidad_mid.service';
 import { FORM_MOVILIDAD_ACADEMICA } from './form-movilidad_academica';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -36,18 +37,22 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
   regMovilidadAcademica: any;
   clean: boolean;
 
-  constructor(private translate: TranslateService, private movilidadAcademicaService: MovilidadAcademicaService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService,
+    private movilidadAcademicaService: MovilidadAcademicaService,
+    private movilidadMidService: MovilidadMidService,
+    private toasterService: ToasterService) {
     this.formMovilidadAcademica = FORM_MOVILIDAD_ACADEMICA;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.construirForm();
     });
-    this.loadOptionsTipodocumento();
-    this.loadOptionsPais();
-    this.loadOptionsNivelacademico();
-    this.loadOptionsProgramaacademico();
+    // this.loadOptionsTipodocumento();
+    // this.loadOptionsPais();
+    // this.loadOptionsNivelacademico();
+    // this.loadOptionsProgramaacademico();
     this.loadOptionsIdtipomovilidad();
     this.loadOptionsIdtipocategoria();
+    this.cargarAcademica();
    }
 
   construirForm() {
@@ -63,49 +68,67 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
     this.translate.use(language);
   }
 
-  loadOptionsTipodocumento(): void {
-    let tipodocumento: Array<any> = [];
-      this.movilidadAcademicaService.get('tipodocumento/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            tipodocumento = <Array<Tipodocumento>>res;
-          }
-          this.formMovilidadAcademica.campos[ this.getIndexForm('Tipodocumento') ].opciones = tipodocumento;
-        });
+  // loadOptionsTipodocumento(): void {
+  //   let tipodocumento: Array<any> = [];
+  //     this.movilidadAcademicaService.get('tipodocumento/?limit=0')
+  //       .subscribe(res => {
+  //         if (res !== null) {
+  //           tipodocumento = <Array<Tipodocumento>>res;
+  //         }
+  //         this.formMovilidadAcademica.campos[ this.getIndexForm('Tipodocumento') ].opciones = tipodocumento;
+  //       });
+  // }
+  // loadOptionsPais(): void {
+  //   let pais: Array<any> = [];
+  //     this.movilidadAcademicaService.get('pais/?limit=0')
+  //       .subscribe(res => {
+  //         if (res !== null) {
+  //           pais = <Array<Pais>>res;
+  //         }
+  //         this.formMovilidadAcademica.campos[ this.getIndexForm('Pais') ].opciones = pais;
+  //       });
+  // }
+  // loadOptionsNivelacademico(): void {
+  //   let nivelacademico: Array<any> = [];
+  //     this.movilidadAcademicaService.get('nivelacademico/?limit=0')
+  //       .subscribe(res => {
+  //         if (res !== null) {
+  //           nivelacademico = <Array<Nivelacademico>>res;
+  //         }
+  //         this.formMovilidadAcademica.campos[ this.getIndexForm('Nivelacademico') ].opciones = nivelacademico;
+  //       });
+  // }
+  // loadOptionsProgramaacademico(): void {
+  //   let programaacademico: Array<any> = [];
+  //     this.movilidadAcademicaService.get('programaacademico/?limit=0')
+  //       .subscribe(res => {
+  //         if (res !== null) {
+  //           programaacademico = <Array<Programaacademico>>res;
+  //         }
+  //         this.formMovilidadAcademica.campos[ this.getIndexForm('Programaacademico') ].opciones = programaacademico;
+  //       });
+  // }
+
+  cargarAcademica() {
+    this.movilidadMidService.get('academica/GetAcademica')
+      .subscribe(res => {
+        if (res !== null) {
+          //  console.info(<MovilidadAcademica>res[0]);
+           this.info_movilidad_academica = <MovilidadAcademica>res[0];
+           this.info_movilidad_academica.Tipodocumento = res[0]['TipoDocumento']['Nombre'];
+           this.info_movilidad_academica.Tipopersona = res[0]['TipoPersona'];
+           this.info_movilidad_academica.Pais = res[0]['Pais']['Nombre'];
+           this.info_movilidad_academica.Nivelacademico = res[0]['NivelAcademico']['Nombre'];
+           this.info_movilidad_academica.Programaacademico = res[0]['ProgramaAcademico']['Nombre'];
+          //  this.info_movilidad_academica.Nombre = res[0]['Nombre'];
+          //  this.formMovilidadAcademica.campos[ this.getIndexForm('Nombre') ] = res[0]['Nombre'];
+        }
+      });
   }
-  loadOptionsPais(): void {
-    let pais: Array<any> = [];
-      this.movilidadAcademicaService.get('pais/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            pais = <Array<Pais>>res;
-          }
-          this.formMovilidadAcademica.campos[ this.getIndexForm('Pais') ].opciones = pais;
-        });
-  }
-  loadOptionsNivelacademico(): void {
-    let nivelacademico: Array<any> = [];
-      this.movilidadAcademicaService.get('nivelacademico/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            nivelacademico = <Array<Nivelacademico>>res;
-          }
-          this.formMovilidadAcademica.campos[ this.getIndexForm('Nivelacademico') ].opciones = nivelacademico;
-        });
-  }
-  loadOptionsProgramaacademico(): void {
-    let programaacademico: Array<any> = [];
-      this.movilidadAcademicaService.get('programaacademico/?limit=0')
-        .subscribe(res => {
-          if (res !== null) {
-            programaacademico = <Array<Programaacademico>>res;
-          }
-          this.formMovilidadAcademica.campos[ this.getIndexForm('Programaacademico') ].opciones = programaacademico;
-        });
-  }
+
   loadOptionsIdtipomovilidad(): void {
     let idtipomovilidad: Array<any> = [];
-      this.movilidadAcademicaService.get('tipomovilidad/?limit=0')
+      this.movilidadAcademicaService.get('tipo_movilidad/?limit=0')
         .subscribe(res => {
           if (res !== null) {
             idtipomovilidad = <Array<Tipomovilidad>>res;
@@ -115,7 +138,7 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
   }
   loadOptionsIdtipocategoria(): void {
     let idtipocategoria: Array<any> = [];
-      this.movilidadAcademicaService.get('tipocategoria/?limit=0')
+      this.movilidadAcademicaService.get('tipo_categoria/?limit=0')
         .subscribe(res => {
           if (res !== null) {
             idtipocategoria = <Array<Tipocategoria>>res;
@@ -141,11 +164,13 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
         .subscribe(res => {
           if (res !== null) {
             this.info_movilidad_academica = <MovilidadAcademica>res[0];
+            this.cargarAcademica();
           }
         });
     } else  {
-      this.info_movilidad_academica = undefined;
-      this.clean = !this.clean;
+      // this.info_movilidad_academica = undefined;
+      // this.clean = !this.clean;
+      this.cargarAcademica();
     }
   }
 

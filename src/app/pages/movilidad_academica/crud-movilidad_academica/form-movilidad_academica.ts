@@ -139,6 +139,7 @@ export let FORM_MOVILIDAD_ACADEMICA = {
         requerido: true,
         tipo: 'Tipomovilidad',
         // key: 'Name',
+        key: 'Nombre',
         opciones: [],
     },
     {
@@ -167,6 +168,7 @@ export let FORM_MOVILIDAD_ACADEMICA = {
         placeholder_i18n: 'idtipocategoria',
         requerido: true,
         tipo: 'Tipocategoria',
+        key: 'Nombre',
         // key: 'Name',
         opciones: [],
     },

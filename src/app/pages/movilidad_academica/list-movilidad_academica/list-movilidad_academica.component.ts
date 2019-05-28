@@ -43,6 +43,13 @@ export class ListMovilidadAcademicaComponent implements OnInit {
         deleteButtonContent: '<i class="nb-trash"></i>',
         confirmDelete: true,
       },
+      actions: {
+        add: false,
+        edit: false,
+        delete: false,
+        // custom: [{ name: 'ourVerInfo', title: '<i class="nb-person"></i>' }],
+        // position: 'right'
+},
       mode: 'external',
       columns: {
         Id: {
@@ -180,7 +187,7 @@ export class ListMovilidadAcademicaComponent implements OnInit {
   }
 
   loadData(): void {
-    this.movilidadAcademicaService.get('movilidad_academica/?limit=0').subscribe(res => {
+    this.movilidadAcademicaService.get('movilidad/?limit=0').subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);
