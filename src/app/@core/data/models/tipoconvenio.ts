@@ -1,5 +1,5 @@
 
-export class TipoConvenio {
+export class Tipoconvenio {
   Id: number;
   Nombre: string;
   Activo: boolean;
