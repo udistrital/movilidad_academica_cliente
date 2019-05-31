@@ -7,11 +7,9 @@
       <span>{{ 'HOME.TITLE' | translate }}</span>
     </div>
   </div>
-  <ngx-theme-switcher></ngx-theme-switcher>
 </div>
 
 <nb-actions size="medium" class="header-container" [class.right]="position === 'normal'" [class.left]="position === 'inverse'">
-  <nb-action icon="nb-grid-b" class="toggle-layout" (click)="toggleSettings()"></nb-action>
   <nb-action [hidden]="!liveToken()">
     <div class="dropdown ghost-dropdown" ngbDropdown>
       <button type="button" class="btn btn-success user" type="button" ngbDropdownToggle>
@@ -38,7 +36,7 @@
       <option *ngFor="let lang of translate.getLangs()" class="form-control" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
     </select>
   </nb-action>
-  <nb-action class="control-item" icon="nb-notifications" [nbContextMenu]="userMenu"  
+  <nb-action class="control-item" icon="nb-notifications" [nbContextMenu]="userMenu"
   [badgeText]="noNotify" badgeStatus="danger">
   </nb-action>
   <nb-action [hidden]="!liveToken()" class="control-item" icon="nb-email"></nb-action>
