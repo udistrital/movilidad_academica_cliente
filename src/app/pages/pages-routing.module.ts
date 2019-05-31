@@ -37,10 +37,6 @@ const routes: Routes = [{
       loadChildren: './nivelacademico/nivelacademico.module#NivelacademicoModule',
       },
       {
-      path: 'convenio',
-      loadChildren: './convenio/convenio.module#ConvenioModule',
-      },
-      {
       path: 'organizacion',
       loadChildren: './organizacion/organizacion.module#OrganizacionModule',
       },
@@ -48,14 +44,34 @@ const routes: Routes = [{
       path: 'pais',
       loadChildren: './pais/pais.module#PaisModule',
       },
-      {
-      path: 'tipoconvenio',
-      loadChildren: './tipoconvenio/tipoconvenio.module#TipoconvenioModule',
-      },
     {
     path: 'tipomovilidad',
     loadChildren: './tipomovilidad/tipomovilidad.module#TipomovilidadModule',
     },
+    {
+      path: 'naturaleza',
+      loadChildren: './naturaleza/naturaleza.module#NaturalezaModule',
+      },
+      {
+      path: 'entidad',
+      loadChildren: './entidad/entidad.module#EntidadModule',
+      },
+      {
+      path: 'estados',
+      loadChildren: './estados/estados.module#EstadosModule',
+      },
+      {
+      path: 'paiscategoria',
+      loadChildren: './paiscategoria/paiscategoria.module#PaiscategoriaModule',
+      },
+      {
+      path: 'categoria',
+      loadChildren: './categoria/categoria.module#CategoriaModule',
+      },
+      {
+      path: 'convenio',
+      loadChildren: './convenio/convenio.module#ConvenioModule',
+      },
     {
     path: '',
     redirectTo: 'dashboard',

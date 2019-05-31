@@ -1,10 +1,10 @@
-import { Organizacion } from './../../../@core/data/models/organizacion';
-import { Tipoconvenio } from './../../../@core/data/models/tipoconvenio';
-import { Pais } from './../../../@core/data/models/pais';
+import { Paiscategoria } from './../../../@core/data/models/paiscategoria';
+import { Entidad } from './../../../@core/data/models/entidad';
+import { Estados } from './../../../@core/data/models/estados';
 
 import { Convenio } from './../../../@core/data/models/convenio';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { MovilidadAcademicaService } from '../../../@core/data/movilidad_academica.service';
+import { ConvenioService } from '../../../@core/data/convenio.service';
 import { FORM_CONVENIO } from './form-convenio';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -33,15 +33,15 @@ export class CrudConvenioComponent implements OnInit {
   regConvenio: any;
   clean: boolean;
 
-  constructor(private translate: TranslateService, private movilidadAcademicaService: MovilidadAcademicaService, private toasterService: ToasterService) {
+  constructor(private translate: TranslateService, private convenioService: ConvenioService, private toasterService: ToasterService) {
     this.formConvenio = FORM_CONVENIO;
     this.construirForm();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.construirForm();
     });
-    this.loadOptionsOrganizacion();
-    this.loadOptionsTipoconvenio();
-    this.loadOptionsPais();
+    this.loadOptionsIdpaiscategoria();
+    this.loadOptionsIdentidad();
+    this.loadOptionsIdestados();
    }
 
   construirForm() {
@@ -57,34 +57,34 @@ export class CrudConvenioComponent implements OnInit {
     this.translate.use(language);
   }
 
-  loadOptionsOrganizacion(): void {
-    let organizacion: Array<any> = [];
-      this.movilidadAcademicaService.get('organizacion/?limit=0')
+  loadOptionsIdpaiscategoria(): void {
+    let idpaiscategoria: Array<any> = [];
+      this.convenioService.get('paiscategoria/?limit=0')
         .subscribe(res => {
           if (res !== null) {
-            organizacion = <Array<Organizacion>>res;
+            idpaiscategoria = <Array<Paiscategoria>>res;
           }
-          this.formConvenio.campos[ this.getIndexForm('Organizacion') ].opciones = organizacion;
+          this.formConvenio.campos[ this.getIndexForm('Idpaiscategoria') ].opciones = idpaiscategoria;
         });
   }
-  loadOptionsTipoconvenio(): void {
-    let tipoconvenio: Array<any> = [];
-      this.movilidadAcademicaService.get('tipoconvenio/?limit=0')
+  loadOptionsIdentidad(): void {
+    let identidad: Array<any> = [];
+      this.convenioService.get('entidad/?limit=0')
         .subscribe(res => {
           if (res !== null) {
-            tipoconvenio = <Array<Tipoconvenio>>res;
+            identidad = <Array<Entidad>>res;
           }
-          this.formConvenio.campos[ this.getIndexForm('Tipoconvenio') ].opciones = tipoconvenio;
+          this.formConvenio.campos[ this.getIndexForm('Identidad') ].opciones = identidad;
         });
   }
-  loadOptionsPais(): void {
-    let pais: Array<any> = [];
-      this.movilidadAcademicaService.get('pais/?limit=0')
+  loadOptionsIdestados(): void {
+    let idestados: Array<any> = [];
+      this.convenioService.get('estados/?limit=0')
         .subscribe(res => {
           if (res !== null) {
-            pais = <Array<Pais>>res;
+            idestados = <Array<Estados>>res;
           }
-          this.formConvenio.campos[ this.getIndexForm('Pais') ].opciones = pais;
+          this.formConvenio.campos[ this.getIndexForm('Idestados') ].opciones = idestados;
         });
   }
 
@@ -101,7 +101,7 @@ export class CrudConvenioComponent implements OnInit {
 
   public loadConvenio(): void {
     if (this.convenio_id !== undefined && this.convenio_id !== 0) {
-      this.movilidadAcademicaService.get('convenio/?query=id:' + this.convenio_id)
+      this.convenioService.get('convenio/?query=id:' + this.convenio_id)
         .subscribe(res => {
           if (res !== null) {
             this.info_convenio = <Convenio>res[0];
@@ -127,7 +127,7 @@ export class CrudConvenioComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_convenio = <Convenio>convenio;
-        this.movilidadAcademicaService.put('convenio', this.info_convenio)
+        this.convenioService.put('convenio', this.info_convenio)
           .subscribe(res => {
             this.loadConvenio();
             this.eventChange.emit(true);
@@ -150,7 +150,7 @@ export class CrudConvenioComponent implements OnInit {
     .then((willDelete) => {
       if (willDelete.value) {
         this.info_convenio = <Convenio>convenio;
-        this.movilidadAcademicaService.post('convenio', this.info_convenio)
+        this.convenioService.post('convenio', this.info_convenio)
           .subscribe(res => {
             this.info_convenio = <Convenio>res;
             this.eventChange.emit(true);

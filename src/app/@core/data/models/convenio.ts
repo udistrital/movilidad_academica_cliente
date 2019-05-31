@@ -1,10 +1,14 @@
-import { Organizacion } from './organizacion';
-import { TipoConvenio } from './tipoconvenio';
-import { Pais } from './pais';
+import { Paiscategoria } from './paiscategoria';
+import { Entidad } from './entidad';
+import { Estados } from './estados';
 
 export class Convenio {
   Id: number;
-  Organizacion: Array<Organizacion>;
-  TipoConvenio: Array<TipoConvenio>;
-  Pais: Array<Pais>;
+  Descripcion: string;
+  Responsable: string;
+  Correoresponsable: string;
+  Enlace: string;
+  Idpaiscategoria: Paiscategoria;
+  Identidad: Entidad;
+  Idestados: Estados;
 }
