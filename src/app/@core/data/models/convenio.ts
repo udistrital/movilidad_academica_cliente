@@ -11,4 +11,5 @@ export class Convenio {
   Idpaiscategoria: Paiscategoria;
   Identidad: Entidad;
   Idestados: Estados;
+
 }
