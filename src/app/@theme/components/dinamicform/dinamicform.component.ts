@@ -136,6 +136,37 @@ export class DinamicformComponent implements OnInit, OnChanges {
       }
       return d;
     });
+    
+    if (this.normalform.campos2){
+      this.normalform.campos2 = this.normalform.campos2.map(d => {
+        d.clase = 'form-control';
+        if (d.relacion === undefined) {
+          d.relacion = true;
+        }
+        if (!d.valor) {
+          d.valor = '';
+        }
+        if (!d.deshabilitar) {
+          d.deshabilitar = false;
+        }
+        return d;
+      });
+    }
+    if (this.normalform.campos3){
+      this.normalform.campos3 = this.normalform.campos3.map(d => {
+        d.clase = 'form-control';
+        if (d.relacion === undefined) {
+          d.relacion = true;
+        }
+        if (!d.valor) {
+          d.valor = '';
+        }
+        if (!d.deshabilitar) {
+          d.deshabilitar = false;
+        }
+        return d;
+      });
+    }
   }
 
   onChangeDate(event, c) {
@@ -206,6 +237,11 @@ export class DinamicformComponent implements OnInit, OnChanges {
     this.normalform.campos.forEach(d => {
       d.valor = null;
     });
+    if (this.normalform.campos2){
+      this.normalform.campos.forEach(d => {
+        d.valor = null;
+      });
+    }
   }
 
   validForm() {
@@ -234,6 +270,42 @@ export class DinamicformComponent implements OnInit, OnChanges {
         this.data.valid = false;
       }
     });
+    if(this.normalform.campos2){
+      this.normalform.campos2.forEach(d => {
+        requeridos = d.requerido ? requeridos + 1 : requeridos;
+        if (this.validCampo(d)) {
+          if (d.etiqueta === 'file') {
+            result[d.nombre] = { nombre: d.nombre, file: d.File };
+            // result[d.nombre].push({ nombre: d.name, file: d.valor });
+          } else if (d.etiqueta === 'select') {
+            result[d.nombre] = d.relacion ? d.valor : d.valor.Id;
+          } else {
+            result[d.nombre] = d.valor;
+          }
+          resueltos = d.requerido ? resueltos + 1 : resueltos;
+        } else {
+          this.data.valid = false;
+        }
+      });
+    }
+    if(this.normalform.campos3){
+      this.normalform.campos3.forEach(d => {
+        requeridos = d.requerido ? requeridos + 1 : requeridos;
+        if (this.validCampo(d)) {
+          if (d.etiqueta === 'file') {
+            result[d.nombre] = { nombre: d.nombre, file: d.File };
+            // result[d.nombre].push({ nombre: d.name, file: d.valor });
+          } else if (d.etiqueta === 'select') {
+            result[d.nombre] = d.relacion ? d.valor : d.valor.Id;
+          } else {
+            result[d.nombre] = d.valor;
+          }
+          resueltos = d.requerido ? resueltos + 1 : resueltos;
+        } else {
+          this.data.valid = false;
+        }
+      });
+    }
 
     if (this.data.valid && (resueltos / requeridos) === 1) {
       if (this.normalform.modelo) {
