@@ -42,7 +42,7 @@
     }
   },
   "GLOBAL": {
-    "movilidad": "movilidad",
+    "movilidad": "Movilidad",
     "placeholder_movilidad": "ej: movilidad",
     "id": "id",
     "placeholder_id": "ej: id",
@@ -87,7 +87,7 @@
     "formulario": "formulario",
     "lista": "lista",
     "regresar": "regresar",
-    "movilidad_academica": "Movilidad academica",
+    "movilidad_academica": "Movilidad Academica",
     "placeholder_movilidad_academica": "ej: Movilidad academica",
     "apellido": "Apellido",
     "placeholder_apellido": "ej: Apellido",
@@ -112,6 +112,8 @@
     "tipoconvenio": "tipo convenio",
     "placeholder_tipoconvenio": "ej: tipo convenio",
     "nit": "nit",
-    "placeholder_nit": "ej: nit"
+    "placeholder_nit": "ej: nit",
+    "solicitante":"Solicitante",
+    "programa_academico":"Programa Academico"
   }
 }
