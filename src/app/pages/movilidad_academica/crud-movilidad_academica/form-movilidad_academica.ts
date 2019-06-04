@@ -129,13 +129,21 @@ export let FORM_MOVILIDAD_ACADEMICA = {
     ],
     campos3:[
         {
-            etiqueta: 'checkbox',
+            etiqueta: 'radio',
             claseGrid: 'col-6',
             nombre: 'Entrante',
             label_i18n: 'entrante',
             placeholder_i18n: 'entrante',
             requerido: true,
-            tipo: 'checkbox',
+            tipo: 'radio',
+            opciones:[
+                {
+                    valor:"Entrante",
+                },
+                {
+                    valor:"Saliente"
+                }
+            ]
         },
         {
             etiqueta: 'select',

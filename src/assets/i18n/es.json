@@ -8,14 +8,14 @@
   "MENU": {
     "dashboard": "Inicio",
     "movilidad": {
-      "movilidad": "movilidad",
-      "lista_movilidad": "lista movilidad",
-      "crud_movilidad": "Crud movilidad"
+      "movilidad": "Movilidad",
+      "lista_movilidad": "Lista",
+      "crud_movilidad": "Formulario"
     },
     "movilidad_academica": {
-      "movilidad_academica": "movilidad academica",
-      "lista_movilidad_academica": "lista movilidad academica",
-      "crud_movilidad_academica": "Crud movilidad academica"
+      "movilidad_academica": "Movilidad Academica",
+      "lista_movilidad_academica": "Lista",
+      "crud_movilidad_academica": "Formulario"
     },
     "tipocategoria": {
       "tipocategoria": "tipocategoria",

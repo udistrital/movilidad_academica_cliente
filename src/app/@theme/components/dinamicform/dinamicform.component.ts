@@ -84,6 +84,94 @@ export class DinamicformComponent implements OnInit, OnChanges {
           });
           this.setPercentage()
         }
+        if (this.normalform.campo2) {
+          this.normalform.campos2.forEach(element => {
+            for (const i in this.modeloData) {
+              if (this.modeloData.hasOwnProperty(i)) {
+                if (i === element.nombre && this.modeloData[i] !== null) {
+                  switch (element.etiqueta) {
+                    case 'selectmultiple':
+                      element.valor = [];
+                      if (this.modeloData[i].length > 0) {
+                        this.modeloData[i].forEach((e1) => element.opciones.forEach((e2) => {
+                          if (e1.Id === e2.Id) {
+                            element.valor.push(e2);
+                          }
+                        }));
+                      }
+                      break;
+                    case 'select':
+                      if (element.hasOwnProperty('opciones')) {
+                        element.opciones.forEach((e1) => {
+                          if (this.modeloData[i].Id !== null) {
+                            if (e1.Id === this.modeloData[i].Id) {
+                              element.valor = e1;
+                            }
+                          }
+                        });
+                      }
+                      break;
+                    case 'mat-date':
+                      element.valor = new Date(this.modeloData[i]);
+                      break;
+                    case 'file':
+                      element.url = this.cleanURL(this.modeloData[i]);
+                      element.urlTemp = this.modeloData[i];
+                      break;
+                    default:
+                      element.valor = this.modeloData[i];
+                  }
+                  this.validCampo(element);
+                }
+              }
+            }
+          });
+          this.setPercentage()
+        }
+        if (this.normalform.campos3) {
+          this.normalform.campos3.forEach(element => {
+            for (const i in this.modeloData) {
+              if (this.modeloData.hasOwnProperty(i)) {
+                if (i === element.nombre && this.modeloData[i] !== null) {
+                  switch (element.etiqueta) {
+                    case 'selectmultiple':
+                      element.valor = [];
+                      if (this.modeloData[i].length > 0) {
+                        this.modeloData[i].forEach((e1) => element.opciones.forEach((e2) => {
+                          if (e1.Id === e2.Id) {
+                            element.valor.push(e2);
+                          }
+                        }));
+                      }
+                      break;
+                    case 'select':
+                      if (element.hasOwnProperty('opciones')) {
+                        element.opciones.forEach((e1) => {
+                          if (this.modeloData[i].Id !== null) {
+                            if (e1.Id === this.modeloData[i].Id) {
+                              element.valor = e1;
+                            }
+                          }
+                        });
+                      }
+                      break;
+                    case 'mat-date':
+                      element.valor = new Date(this.modeloData[i]);
+                      break;
+                    case 'file':
+                      element.url = this.cleanURL(this.modeloData[i]);
+                      element.urlTemp = this.modeloData[i];
+                      break;
+                    default:
+                      element.valor = this.modeloData[i];
+                  }
+                  this.validCampo(element);
+                }
+              }
+            }
+          });
+          this.setPercentage()
+        }
       }
     }
     if (changes.clean !== undefined) {
