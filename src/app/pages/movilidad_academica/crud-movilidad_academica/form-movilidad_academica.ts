@@ -125,7 +125,6 @@ export let FORM_MOVILIDAD_ACADEMICA = {
             // key: 'Name',
             // opciones: [],
         },
-        
     ],
     campos3:[
         {
@@ -136,12 +135,12 @@ export let FORM_MOVILIDAD_ACADEMICA = {
             placeholder_i18n: 'entrante',
             requerido: true,
             tipo: 'radio',
-            opciones:[
+            opciones: [
                 {
-                    valor:"Entrante",
+                    valor: 'Entrante',
                 },
                 {
-                    valor:"Saliente"
+                    valor: 'Saliente',
                 }
             ]
         },
