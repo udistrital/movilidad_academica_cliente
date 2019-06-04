@@ -110,7 +110,6 @@ export class ListConvenioComponent implements OnInit {
   loadData(): void {
     this.convenioService.get('convenio/?limit=0').subscribe(res => {
       if (res !== null) {
-        console.log(res)
         const data = <Array<any>>res;
         this.source.load(data);
           }
