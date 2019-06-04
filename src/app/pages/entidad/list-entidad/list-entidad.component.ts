@@ -7,11 +7,11 @@ import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
 @Component({
-  selector: 'ngx-list-convenio',
-  templateUrl: './list-convenio.component.html',
-  styleUrls: ['./list-convenio.component.scss'],
+  selector: 'ngx-list-entidad',
+  templateUrl: './list-entidad.component.html',
+  styleUrls: ['./list-entidad.component.scss'],
   })
-export class ListConvenioComponent implements OnInit {
+export class ListEntidadComponent implements OnInit {
   uid: number;
   cambiotab: boolean = false;
   config: ToasterConfig;
@@ -52,6 +52,27 @@ export class ListConvenioComponent implements OnInit {
             return value;
           },
         },
+        Direccion: {
+          title: this.translate.instant('GLOBAL.direccion'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        Correo: {
+          title: this.translate.instant('GLOBAL.correo'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
+        Telefono: {
+          title: this.translate.instant('GLOBAL.telefono'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
         Descripcion: {
           title: this.translate.instant('GLOBAL.descripcion'),
           // type: 'string;',
@@ -59,44 +80,16 @@ export class ListConvenioComponent implements OnInit {
             return value;
           },
         },
-        Responsable: {
-          title: this.translate.instant('GLOBAL.responsable'),
+        Organizacion: {
+          title: this.translate.instant('GLOBAL.organizacion'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
-        Correoresponsable: {
-          title: this.translate.instant('GLOBAL.correoresponsable'),
-          // type: 'string;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        Enlace: {
-          title: this.translate.instant('GLOBAL.enlace'),
-          // type: 'string;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        Idpaiscategoria: {
-          title: this.translate.instant('GLOBAL.idpaiscategoria'),
-          // type: 'PaisCategoria;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        Identidad: {
-          title: this.translate.instant('GLOBAL.identidad'),
-          // type: 'Entidad;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        Idestados: {
-          title: this.translate.instant('GLOBAL.idestados'),
-          // type: 'Estados;',
+        Idnaturaleza: {
+          title: this.translate.instant('GLOBAL.idnaturaleza'),
+          // type: 'Naturaleza;',
           valuePrepareFunction: (value) => {
             return value;
           },
@@ -110,7 +103,7 @@ export class ListConvenioComponent implements OnInit {
   }
 
   loadData(): void {
-    this.convenioService.get('convenio/?limit=0').subscribe(res => {
+    this.convenioService.get('entidad/?limit=0').subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);
@@ -134,7 +127,7 @@ export class ListConvenioComponent implements OnInit {
   onDelete(event): void {
     const opt: any = {
       title: 'Deleting?',
-      text: 'Delete Convenio!',
+      text: 'Delete Entidad!',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
@@ -144,10 +137,10 @@ export class ListConvenioComponent implements OnInit {
     .then((willDelete) => {
 
       if (willDelete.value) {
-        this.convenioService.delete('convenio/', event.data).subscribe(res => {
+        this.convenioService.delete('entidad/', event.data).subscribe(res => {
           if (res !== null) {
             this.loadData();
-            this.showToast('info', 'deleted', 'Convenio deleted');
+            this.showToast('info', 'deleted', 'Entidad deleted');
             }
          });
       }

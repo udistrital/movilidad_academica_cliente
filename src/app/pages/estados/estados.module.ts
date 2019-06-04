@@ -1,17 +1,17 @@
-import { ConvenioRoutingModule, routedComponents } from './convenio-routing.module';
+import { EstadosRoutingModule, routedComponents } from './estados-routing.module';
 import { NgModule } from '@angular/core';
 import { ThemeModule } from '../../@theme/theme.module';
 import { ConvenioService } from '../../@core/data/convenio.service';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ToasterModule } from 'angular2-toaster';
 import { SharedModule } from '../../shared/shared.module';
-import { CrudConvenioComponent } from './crud-convenio/crud-convenio.component';
+import { CrudEstadosComponent } from './crud-estados/crud-estados.component';
 import { ToasterService} from 'angular2-toaster';
 
 @NgModule({
   imports: [
     ThemeModule,
-    ConvenioRoutingModule,
+    EstadosRoutingModule,
     Ng2SmartTableModule,
     ToasterModule,
     SharedModule,
@@ -24,7 +24,7 @@ import { ToasterService} from 'angular2-toaster';
     ToasterService,
   ],
   exports: [
-    CrudConvenioComponent,
+    CrudEstadosComponent,
   ],
 })
-export class ConvenioModule { }
+export class EstadosModule { }

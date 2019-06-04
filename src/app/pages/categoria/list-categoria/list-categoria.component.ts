@@ -7,11 +7,11 @@ import Swal from 'sweetalert2';
 import 'style-loader!angular2-toaster/toaster.css';
 
 @Component({
-  selector: 'ngx-list-convenio',
-  templateUrl: './list-convenio.component.html',
-  styleUrls: ['./list-convenio.component.scss'],
+  selector: 'ngx-list-categoria',
+  templateUrl: './list-categoria.component.html',
+  styleUrls: ['./list-categoria.component.scss'],
   })
-export class ListConvenioComponent implements OnInit {
+export class ListCategoriaComponent implements OnInit {
   uid: number;
   cambiotab: boolean = false;
   config: ToasterConfig;
@@ -52,6 +52,13 @@ export class ListConvenioComponent implements OnInit {
             return value;
           },
         },
+        Nombre: {
+          title: this.translate.instant('GLOBAL.nombre'),
+          // type: 'string;',
+          valuePrepareFunction: (value) => {
+            return value;
+          },
+        },
         Descripcion: {
           title: this.translate.instant('GLOBAL.descripcion'),
           // type: 'string;',
@@ -59,23 +66,23 @@ export class ListConvenioComponent implements OnInit {
             return value;
           },
         },
-        Responsable: {
-          title: this.translate.instant('GLOBAL.responsable'),
+        Codigoabreavicion: {
+          title: this.translate.instant('GLOBAL.codigoabreavicion'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
-        Correoresponsable: {
-          title: this.translate.instant('GLOBAL.correoresponsable'),
-          // type: 'string;',
+        Activo: {
+          title: this.translate.instant('GLOBAL.activo'),
+          // type: 'boolean;',
           valuePrepareFunction: (value) => {
             return value;
           },
         },
-        Enlace: {
-          title: this.translate.instant('GLOBAL.enlace'),
-          // type: 'string;',
+        Numeroorden: {
+          title: this.translate.instant('GLOBAL.numeroorden'),
+          // type: 'number;',
           valuePrepareFunction: (value) => {
             return value;
           },
@@ -83,20 +90,6 @@ export class ListConvenioComponent implements OnInit {
         Idpaiscategoria: {
           title: this.translate.instant('GLOBAL.idpaiscategoria'),
           // type: 'PaisCategoria;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        Identidad: {
-          title: this.translate.instant('GLOBAL.identidad'),
-          // type: 'Entidad;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
-        Idestados: {
-          title: this.translate.instant('GLOBAL.idestados'),
-          // type: 'Estados;',
           valuePrepareFunction: (value) => {
             return value;
           },
@@ -110,7 +103,7 @@ export class ListConvenioComponent implements OnInit {
   }
 
   loadData(): void {
-    this.convenioService.get('convenio/?limit=0').subscribe(res => {
+    this.convenioService.get('categoria/?limit=0').subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);
@@ -134,7 +127,7 @@ export class ListConvenioComponent implements OnInit {
   onDelete(event): void {
     const opt: any = {
       title: 'Deleting?',
-      text: 'Delete Convenio!',
+      text: 'Delete Categoria!',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
@@ -144,10 +137,10 @@ export class ListConvenioComponent implements OnInit {
     .then((willDelete) => {
 
       if (willDelete.value) {
-        this.convenioService.delete('convenio/', event.data).subscribe(res => {
+        this.convenioService.delete('categoria/', event.data).subscribe(res => {
           if (res !== null) {
             this.loadData();
-            this.showToast('info', 'deleted', 'Convenio deleted');
+            this.showToast('info', 'deleted', 'Categoria deleted');
             }
          });
       }
