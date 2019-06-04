@@ -9,7 +9,6 @@ export const MENU_ITEMS: MenuItem[] = [
     home: true,
     key: 'dashboard',
   },
-<<<<<<< HEAD
   /*{
     title: 'Movilidad',
     icon: 'nb-compose',
@@ -28,26 +27,7 @@ export const MENU_ITEMS: MenuItem[] = [
       },
     ],
   },*/
-=======
-  // {
-  //   title: 'Movilidad',
-  //   icon: 'nb-compose',
-  //   link: '/pages/movilidad',
-  //   key: 'movilidad',
-  //   children: [
-  //     {
-  //       title: 'Lista Movilidad',
-  //       link: '/pages/movilidad/list-movilidad',
-  //       key: 'lista_movilidad',
-  //     },
-  //     {
-  //       title: 'CRUD Movilidad',
-  //       link: '/pages/movilidad/crud-movilidad',
-  //       key: 'crud_movilidad',
-  //     },
-  //   ],
-  // },
->>>>>>> 19ee8982cb0229abfd1f245e156d8cabf212a39b
+
   // {
   //   title: 'Tipocategoria',
   //   icon: 'nb-compose',
@@ -195,8 +175,8 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     title: 'Convenio',
     icon: 'nb-compose',
-    link: '/pages/convenio',
-    key: 'convenio',
+    link: '/pages/convenio/list-convenio',
+    /*key: 'lista_convenio',
     children: [
       {
         title: 'Lista Convenio',
@@ -208,6 +188,6 @@ export const MENU_ITEMS: MenuItem[] = [
         link: '/pages/convenio/crud-convenio',
         key: 'crud_convenio',
       },
-    ],
+    ],*/
   },
 ]

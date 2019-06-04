@@ -45,13 +45,6 @@ export class ListConvenioComponent implements OnInit {
       },
       mode: 'external',
       columns: {
-        Id: {
-          title: this.translate.instant('GLOBAL.id'),
-          // type: 'number;',
-          valuePrepareFunction: (value) => {
-            return value;
-          },
-        },
         Descripcion: {
           title: this.translate.instant('GLOBAL.descripcion'),
           // type: 'string;',
@@ -66,7 +59,7 @@ export class ListConvenioComponent implements OnInit {
             return value;
           },
         },
-        Correoresponsable: {
+        CorreoResponsable: {
           title: this.translate.instant('GLOBAL.correoresponsable'),
           // type: 'string;',
           valuePrepareFunction: (value) => {
@@ -80,27 +73,32 @@ export class ListConvenioComponent implements OnInit {
             return value;
           },
         },
-        Idpaiscategoria: {
+        IdPaisCategoria: {
           title: this.translate.instant('GLOBAL.idpaiscategoria'),
           // type: 'PaisCategoria;',
           valuePrepareFunction: (value) => {
-            return value;
+            return value.Pais;
           },
         },
-        Identidad: {
+        IdEntidad: {
           title: this.translate.instant('GLOBAL.identidad'),
           // type: 'Entidad;',
           valuePrepareFunction: (value) => {
-            return value;
+            return value.Organizacion;
           },
         },
-        Idestados: {
+        IdEstados: {
           title: this.translate.instant('GLOBAL.idestados'),
           // type: 'Estados;',
           valuePrepareFunction: (value) => {
-            return value;
+            return value.Nombre;
           },
         },
+      },
+      actions: {
+        add: false,
+        edit: false,
+        delete: false,
       },
     };
   }
