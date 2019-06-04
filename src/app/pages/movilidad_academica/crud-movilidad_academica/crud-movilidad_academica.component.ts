@@ -56,11 +56,21 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
    }
 
   construirForm() {
-    this.formMovilidadAcademica.titulo = this.translate.instant('GLOBAL.movilidad_academica');
+    this.formMovilidadAcademica.titulo = this.translate.instant('GLOBAL.solicitante');
+    this.formMovilidadAcademica.titulo2 = this.translate.instant('GLOBAL.programa_academico');
+    this.formMovilidadAcademica.titulo3 = this.translate.instant('GLOBAL.movilidad');
     this.formMovilidadAcademica.btn = this.translate.instant('GLOBAL.guardar');
     for (let i = 0; i < this.formMovilidadAcademica.campos.length; i++) {
       this.formMovilidadAcademica.campos[i].label = this.translate.instant('GLOBAL.' + this.formMovilidadAcademica.campos[i].label_i18n);
       this.formMovilidadAcademica.campos[i].placeholder = this.translate.instant('GLOBAL.placeholder_' + this.formMovilidadAcademica.campos[i].label_i18n);
+    }
+    for (let i = 0; i < this.formMovilidadAcademica.campos2.length; i++) {
+      this.formMovilidadAcademica.campos2[i].label = this.translate.instant('GLOBAL.' + this.formMovilidadAcademica.campos2[i].label_i18n);
+      this.formMovilidadAcademica.campos2[i].placeholder = this.translate.instant('GLOBAL.placeholder_' + this.formMovilidadAcademica.campos2[i].label_i18n);
+    }
+    for (let i = 0; i < this.formMovilidadAcademica.campos3.length; i++) {
+      this.formMovilidadAcademica.campos3[i].label = this.translate.instant('GLOBAL.' + this.formMovilidadAcademica.campos3[i].label_i18n);
+      this.formMovilidadAcademica.campos3[i].placeholder = this.translate.instant('GLOBAL.placeholder_' + this.formMovilidadAcademica.campos3[i].label_i18n);
     }
   }
 

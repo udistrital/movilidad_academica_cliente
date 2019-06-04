@@ -84,6 +84,94 @@ export class DinamicformComponent implements OnInit, OnChanges {
           });
           this.setPercentage()
         }
+        if (this.normalform.campo2) {
+          this.normalform.campos2.forEach(element => {
+            for (const i in this.modeloData) {
+              if (this.modeloData.hasOwnProperty(i)) {
+                if (i === element.nombre && this.modeloData[i] !== null) {
+                  switch (element.etiqueta) {
+                    case 'selectmultiple':
+                      element.valor = [];
+                      if (this.modeloData[i].length > 0) {
+                        this.modeloData[i].forEach((e1) => element.opciones.forEach((e2) => {
+                          if (e1.Id === e2.Id) {
+                            element.valor.push(e2);
+                          }
+                        }));
+                      }
+                      break;
+                    case 'select':
+                      if (element.hasOwnProperty('opciones')) {
+                        element.opciones.forEach((e1) => {
+                          if (this.modeloData[i].Id !== null) {
+                            if (e1.Id === this.modeloData[i].Id) {
+                              element.valor = e1;
+                            }
+                          }
+                        });
+                      }
+                      break;
+                    case 'mat-date':
+                      element.valor = new Date(this.modeloData[i]);
+                      break;
+                    case 'file':
+                      element.url = this.cleanURL(this.modeloData[i]);
+                      element.urlTemp = this.modeloData[i];
+                      break;
+                    default:
+                      element.valor = this.modeloData[i];
+                  }
+                  this.validCampo(element);
+                }
+              }
+            }
+          });
+          this.setPercentage()
+        }
+        if (this.normalform.campos3) {
+          this.normalform.campos3.forEach(element => {
+            for (const i in this.modeloData) {
+              if (this.modeloData.hasOwnProperty(i)) {
+                if (i === element.nombre && this.modeloData[i] !== null) {
+                  switch (element.etiqueta) {
+                    case 'selectmultiple':
+                      element.valor = [];
+                      if (this.modeloData[i].length > 0) {
+                        this.modeloData[i].forEach((e1) => element.opciones.forEach((e2) => {
+                          if (e1.Id === e2.Id) {
+                            element.valor.push(e2);
+                          }
+                        }));
+                      }
+                      break;
+                    case 'select':
+                      if (element.hasOwnProperty('opciones')) {
+                        element.opciones.forEach((e1) => {
+                          if (this.modeloData[i].Id !== null) {
+                            if (e1.Id === this.modeloData[i].Id) {
+                              element.valor = e1;
+                            }
+                          }
+                        });
+                      }
+                      break;
+                    case 'mat-date':
+                      element.valor = new Date(this.modeloData[i]);
+                      break;
+                    case 'file':
+                      element.url = this.cleanURL(this.modeloData[i]);
+                      element.urlTemp = this.modeloData[i];
+                      break;
+                    default:
+                      element.valor = this.modeloData[i];
+                  }
+                  this.validCampo(element);
+                }
+              }
+            }
+          });
+          this.setPercentage()
+        }
       }
     }
     if (changes.clean !== undefined) {
@@ -136,6 +224,37 @@ export class DinamicformComponent implements OnInit, OnChanges {
       }
       return d;
     });
+    
+    if (this.normalform.campos2){
+      this.normalform.campos2 = this.normalform.campos2.map(d => {
+        d.clase = 'form-control';
+        if (d.relacion === undefined) {
+          d.relacion = true;
+        }
+        if (!d.valor) {
+          d.valor = '';
+        }
+        if (!d.deshabilitar) {
+          d.deshabilitar = false;
+        }
+        return d;
+      });
+    }
+    if (this.normalform.campos3){
+      this.normalform.campos3 = this.normalform.campos3.map(d => {
+        d.clase = 'form-control';
+        if (d.relacion === undefined) {
+          d.relacion = true;
+        }
+        if (!d.valor) {
+          d.valor = '';
+        }
+        if (!d.deshabilitar) {
+          d.deshabilitar = false;
+        }
+        return d;
+      });
+    }
   }
 
   onChangeDate(event, c) {
@@ -206,6 +325,11 @@ export class DinamicformComponent implements OnInit, OnChanges {
     this.normalform.campos.forEach(d => {
       d.valor = null;
     });
+    if (this.normalform.campos2){
+      this.normalform.campos.forEach(d => {
+        d.valor = null;
+      });
+    }
   }
 
   validForm() {
@@ -234,6 +358,42 @@ export class DinamicformComponent implements OnInit, OnChanges {
         this.data.valid = false;
       }
     });
+    if(this.normalform.campos2){
+      this.normalform.campos2.forEach(d => {
+        requeridos = d.requerido ? requeridos + 1 : requeridos;
+        if (this.validCampo(d)) {
+          if (d.etiqueta === 'file') {
+            result[d.nombre] = { nombre: d.nombre, file: d.File };
+            // result[d.nombre].push({ nombre: d.name, file: d.valor });
+          } else if (d.etiqueta === 'select') {
+            result[d.nombre] = d.relacion ? d.valor : d.valor.Id;
+          } else {
+            result[d.nombre] = d.valor;
+          }
+          resueltos = d.requerido ? resueltos + 1 : resueltos;
+        } else {
+          this.data.valid = false;
+        }
+      });
+    }
+    if(this.normalform.campos3){
+      this.normalform.campos3.forEach(d => {
+        requeridos = d.requerido ? requeridos + 1 : requeridos;
+        if (this.validCampo(d)) {
+          if (d.etiqueta === 'file') {
+            result[d.nombre] = { nombre: d.nombre, file: d.File };
+            // result[d.nombre].push({ nombre: d.name, file: d.valor });
+          } else if (d.etiqueta === 'select') {
+            result[d.nombre] = d.relacion ? d.valor : d.valor.Id;
+          } else {
+            result[d.nombre] = d.valor;
+          }
+          resueltos = d.requerido ? resueltos + 1 : resueltos;
+        } else {
+          this.data.valid = false;
+        }
+      });
+    }
 
     if (this.data.valid && (resueltos / requeridos) === 1) {
       if (this.normalform.modelo) {
