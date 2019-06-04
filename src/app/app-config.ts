@@ -6,7 +6,7 @@ export const Config = {
         },
         WSO2_SERVICE: 'http://jbpm.udistritaloas.edu.co:8280/services',
         DOCUMENTO_SERVICE: 'http://localhost:8094/v1/',
-        CONVENIO_SERVICE: 'http://10.21.63.162:8082/v1/',
+        CONVENIO_SERVICE: 'http://10.21.70.231:8082/v1/',
         MOVILIDAD_ACADEMICA_SERVICE: 'http://localhost:8080/v1/',
         MOVILIDAD_ACADEMICA_SERVICE_MID: 'http://localhost:8081/v1/',
         CAMPUS_MID: 'http://localhost:8081/v1/',
