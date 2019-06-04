@@ -9,6 +9,7 @@ import { MovilidadAcademica } from './../../../@core/data/models/movilidad_acade
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MovilidadAcademicaService } from '../../../@core/data/movilidad_academica.service';
 import { MovilidadMidService } from '../../../@core/data/movilidad_mid.service';
+import { CampusMidService } from '../../../@core/data/campus_mid.service';
 import { FORM_MOVILIDAD_ACADEMICA } from './form-movilidad_academica';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -23,6 +24,8 @@ import 'style-loader!angular2-toaster/toaster.css';
 export class CrudMovilidadAcademicaComponent implements OnInit {
   config: ToasterConfig;
   movilidad_academica_id: number;
+  NumeroIdentificacionPersona: string;
+  cargaPersona: boolean;
 
   @Input('movilidad_academica_id')
   set name(movilidad_academica_id: number) {
@@ -33,6 +36,7 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
   @Output() eventChange = new EventEmitter();
 
   info_movilidad_academica: MovilidadAcademica;
+  PersonaMid: MovilidadAcademica;
   formMovilidadAcademica: any;
   regMovilidadAcademica: any;
   clean: boolean;
@@ -40,6 +44,7 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
   constructor(private translate: TranslateService,
     private movilidadAcademicaService: MovilidadAcademicaService,
     private movilidadMidService: MovilidadMidService,
+    private campusMidService: CampusMidService,
     private toasterService: ToasterService) {
     this.formMovilidadAcademica = FORM_MOVILIDAD_ACADEMICA;
     this.construirForm();
@@ -53,6 +58,7 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
     this.loadOptionsIdtipomovilidad();
     this.loadOptionsIdtipocategoria();
     this.cargarAcademica();
+    this.cargaPersona = false;
    }
 
   construirForm() {
@@ -123,13 +129,19 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
     this.movilidadMidService.get('academica/GetAcademica')
       .subscribe(res => {
         if (res !== null) {
-          //  console.info(<MovilidadAcademica>res[0]);
+           console.info(<MovilidadAcademica>res[0]);
            this.info_movilidad_academica = <MovilidadAcademica>res[0];
-           this.info_movilidad_academica.Tipodocumento = res[0]['TipoDocumento']['Nombre'];
-           this.info_movilidad_academica.Tipopersona = res[0]['TipoPersona'];
+          //  this.info_movilidad_academica.Tipodocumento = res[0]['TipoDocumento']['Nombre'];
+          this.info_movilidad_academica.Telefono = 0;
+          this.info_movilidad_academica.Direccion = '';
+          this.info_movilidad_academica.Nombre = '';
+          this.info_movilidad_academica.Apellido = '';
+          this.info_movilidad_academica.Identificacion = 0;
+          this.info_movilidad_academica.Tipodocumento = [];
+          //  this.info_movilidad_academica.Tipopersona = res[0]['TipoPersona'];
            this.info_movilidad_academica.Pais = res[0]['Pais']['Nombre'];
            this.info_movilidad_academica.Nivelacademico = res[0]['NivelAcademico']['Nombre'];
-           this.info_movilidad_academica.Programaacademico = res[0]['ProgramaAcademico']['Nombre'];
+          //  this.info_movilidad_academica.Programaacademico = res[0]['ProgramaAcademico']['Nombre'];
           //  this.info_movilidad_academica.Nombre = res[0]['Nombre'];
           //  this.formMovilidadAcademica.campos[ this.getIndexForm('Nombre') ] = res[0]['Nombre'];
         }
@@ -174,13 +186,13 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
         .subscribe(res => {
           if (res !== null) {
             this.info_movilidad_academica = <MovilidadAcademica>res[0];
-            this.cargarAcademica();
+            // this.cargarAcademica();
           }
         });
     } else  {
       // this.info_movilidad_academica = undefined;
       // this.clean = !this.clean;
-      this.cargarAcademica();
+      // this.cargarAcademica();
     }
   }
 
@@ -243,6 +255,25 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
         this.updateMovilidadAcademica(event.data.MovilidadAcademica);
       }
     }
+  }
+
+  GetPersonaMid() {
+    this.cargaPersona = false;
+    this.campusMidService.get(`academica/GetPersona/?numIdent=${this.NumeroIdentificacionPersona}`)
+      .subscribe(res => {
+        if (res !== null) {
+          //  console.info(res);}
+          this.cargaPersona = true;
+          this.info_movilidad_academica.Nombre = `${res['PrimerNombre']} ${res['SegundoNombre']}`;
+          this.formMovilidadAcademica.campos[ this.getIndexForm('Nombre') ].valor =  `${res['PrimerNombre']} ${res['SegundoNombre']}`;
+          this.info_movilidad_academica.Apellido = `${res['PrimerApellido']} ${res['SegundoApellido']}`;
+          this.formMovilidadAcademica.campos[ this.getIndexForm('Apellido') ].valor =  `${res['PrimerApellido']} ${res['SegundoApellido']}`;
+          this.info_movilidad_academica.Identificacion = res['NumeroDocumento'];
+          this.formMovilidadAcademica.campos[ this.getIndexForm('Identificacion') ].valor =  res['NumeroDocumento'];
+          // this.info_movilidad_academica.Tipodocumento = `${res['PrimerNombre']} ${res['SegundoNombre']}`;
+          this.formMovilidadAcademica.campos[ this.getIndexForm('Tipodocumento') ].valor =  res['TipoIdentificacion']['Nombre'];
+        }
+      });
   }
 
   private showToast(type: string, title: string, body: string) {

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ThemeModule } from '../../@theme/theme.module';
 import { MovilidadAcademicaService } from '../../@core/data/movilidad_academica.service';
 import { MovilidadMidService } from '../../@core/data/movilidad_mid.service';
+import { CampusMidService } from '../../@core/data/campus_mid.service';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ToasterModule } from 'angular2-toaster';
 import { SharedModule } from '../../shared/shared.module';
@@ -23,6 +24,7 @@ import { ToasterService} from 'angular2-toaster';
   providers: [
     MovilidadAcademicaService,
     MovilidadMidService,
+    CampusMidService,
     ToasterService,
   ],
   exports: [
