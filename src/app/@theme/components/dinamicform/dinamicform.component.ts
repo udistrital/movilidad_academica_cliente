@@ -224,8 +224,8 @@ export class DinamicformComponent implements OnInit, OnChanges {
       }
       return d;
     });
-    
-    if (this.normalform.campos2){
+
+    if (this.normalform.campos2) {
       this.normalform.campos2 = this.normalform.campos2.map(d => {
         d.clase = 'form-control';
         if (d.relacion === undefined) {
@@ -240,7 +240,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
         return d;
       });
     }
-    if (this.normalform.campos3){
+    if (this.normalform.campos3) {
       this.normalform.campos3 = this.normalform.campos3.map(d => {
         d.clase = 'form-control';
         if (d.relacion === undefined) {
@@ -325,7 +325,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
     this.normalform.campos.forEach(d => {
       d.valor = null;
     });
-    if (this.normalform.campos2){
+    if (this.normalform.campos2) {
       this.normalform.campos.forEach(d => {
         d.valor = null;
       });
@@ -358,7 +358,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
         this.data.valid = false;
       }
     });
-    if(this.normalform.campos2){
+    if (this.normalform.campos2) {
       this.normalform.campos2.forEach(d => {
         requeridos = d.requerido ? requeridos + 1 : requeridos;
         if (this.validCampo(d)) {
@@ -376,7 +376,7 @@ export class DinamicformComponent implements OnInit, OnChanges {
         }
       });
     }
-    if(this.normalform.campos3){
+    if (this.normalform.campos3) {
       this.normalform.campos3.forEach(d => {
         requeridos = d.requerido ? requeridos + 1 : requeridos;
         if (this.validCampo(d)) {

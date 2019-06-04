@@ -98,7 +98,7 @@ export let FORM_MOVILIDAD_ACADEMICA = {
         // opciones: [],
     },
     ],
-    campos2:[
+    campos2: [
         {
             // etiqueta: 'selectmultiple',
             etiqueta: 'input',
@@ -126,7 +126,7 @@ export let FORM_MOVILIDAD_ACADEMICA = {
             // opciones: [],
         },
     ],
-    campos3:[
+    campos3: [
         {
             etiqueta: 'radio',
             claseGrid: 'col-6',
@@ -141,8 +141,8 @@ export let FORM_MOVILIDAD_ACADEMICA = {
                 },
                 {
                     valor: 'Saliente',
-                }
-            ]
+                },
+            ],
         },
         {
             etiqueta: 'select',
