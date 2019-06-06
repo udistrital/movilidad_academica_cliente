@@ -102,8 +102,7 @@ export let FORM_MOVILIDAD_ACADEMICA = {
         requerido: true,
         // tipo: 'Pais',
         tipo: 'text',
-        // key: 'Name',
-        
+        // key: 'Name',        
     },
     ],
     campos2: [
