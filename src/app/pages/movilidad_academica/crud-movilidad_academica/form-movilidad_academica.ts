@@ -76,13 +76,21 @@ export let FORM_MOVILIDAD_ACADEMICA = {
         tipo: 'text',
     },
     {
-        etiqueta: 'input',
+        etiqueta: 'radio',
         claseGrid: 'col-6',
         nombre: 'Tipopersona',
         label_i18n: 'tipopersona',
         placeholder_i18n: 'tipopersona',
         requerido: true,
-        tipo: 'text',
+        tipo: 'radio',
+        opciones: [
+            {
+                valor: 'Estudiante',
+            },
+            {
+                valor: 'Profesor',
+            },
+        ],
     },
     {
         // etiqueta: 'selectmultiple',
@@ -95,7 +103,7 @@ export let FORM_MOVILIDAD_ACADEMICA = {
         // tipo: 'Pais',
         tipo: 'text',
         // key: 'Name',
-        // opciones: [],
+        
     },
     ],
     campos2: [

@@ -70,11 +70,11 @@ export const MENU_ITEMS: MenuItem[] = [
     link: '/pages/movilidad_academica',
     key: 'movilidad_academica',
     children: [
-      // {
-      //   title: 'Lista Movilidad Academica',
-      //   link: '/pages/movilidad_academica/list-movilidad_academica',
-      //   key: 'lista_movilidad_academica',
-      // },
+      {
+         title: 'Lista Movilidad Academica',
+         link: '/pages/movilidad_academica/list-movilidad_academica',
+         key: 'lista_movilidad_academica',
+       },
       {
         title: 'CRUD Movilidad Academica',
         link: '/pages/movilidad_academica/crud-movilidad_academica',

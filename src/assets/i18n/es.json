@@ -169,6 +169,8 @@
     "guardar" : "guardar",
     "formulario": "formulario",
     "lista": "lista",
-    "regresar": "regresar"
+    "regresar": "regresar",
+    "solicitante": "Solicitante",
+    "programa_academico":"Programa Academico"
   }
 }
