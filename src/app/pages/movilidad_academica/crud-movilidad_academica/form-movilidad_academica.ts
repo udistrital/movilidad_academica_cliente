@@ -101,7 +101,7 @@ export let FORM_MOVILIDAD_ACADEMICA = {
         placeholder_i18n: 'pais',
         requerido: true,
         // tipo: 'Pais',
-        tipo: 'text',     
+        tipo: 'text',
     },
     ],
     campos2: [
