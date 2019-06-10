@@ -108,7 +108,7 @@ export class ListConvenioComponent implements OnInit {
   }
 
   loadData(): void {
-    this.convenioService.get('convenio/?limit=0').subscribe(res => {
+    this.convenioService.get('convenio/').subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);

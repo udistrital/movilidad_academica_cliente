@@ -259,7 +259,8 @@ export class CrudMovilidadAcademicaComponent implements OnInit {
 
   GetPersonaMid() {
     this.cargaPersona = false;
-    this.campusMidService.get(`academica/GetPersona/?numIdent=${this.NumeroIdentificacionPersona}`)
+    // this.campusMidService.get(`academica/GetPersona/?numIdent=${this.NumeroIdentificacionPersona}`)
+    this.campusMidService.get(`persona/${this.NumeroIdentificacionPersona}`)
       .subscribe(res => {
         if (res !== null) {
           //  console.info(res);}

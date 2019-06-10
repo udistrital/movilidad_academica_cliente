@@ -59,7 +59,7 @@ export class CrudConvenioComponent implements OnInit {
 
   loadOptionsIdpaiscategoria(): void {
     let idpaiscategoria: Array<any> = [];
-      this.convenioService.get('paiscategoria/?limit=0')
+      this.convenioService.get('pais_categoria/')
         .subscribe(res => {
           if (res !== null) {
             idpaiscategoria = <Array<Paiscategoria>>res;
@@ -69,7 +69,7 @@ export class CrudConvenioComponent implements OnInit {
   }
   loadOptionsIdentidad(): void {
     let identidad: Array<any> = [];
-      this.convenioService.get('entidad/?limit=0')
+      this.convenioService.get('entidad/')
         .subscribe(res => {
           if (res !== null) {
             identidad = <Array<Entidad>>res;
@@ -79,7 +79,7 @@ export class CrudConvenioComponent implements OnInit {
   }
   loadOptionsIdestados(): void {
     let idestados: Array<any> = [];
-      this.convenioService.get('estados/?limit=0')
+      this.convenioService.get('estados/')
         .subscribe(res => {
           if (res !== null) {
             idestados = <Array<Estados>>res;
