@@ -15,6 +15,9 @@ Como componentes básicos cuenta con:
   <img src="/assets/Form.png" alt="Mockup Vista Formularios" />
   Vista Listados: 
   <img src="/assets/Listado.png" alt="Mockup Vista Listados" />
+  Vista Formulario Convenio: 
+  <img src="/assets/Convenio.png" alt="Mockup Vista Convenios" />
+
 </details>
 <summary><h2> :paintbrush: Paleta de colores</h2></summary>
 <details>
