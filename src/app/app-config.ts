@@ -12,7 +12,7 @@ export const Config = {
         CAMPUS_MID: 'https://autenticacion.udistrital.edu.co/apioas/campus_mid_api/v1/',
         PERSONA_SERVICE: 'https://autenticacion.udistrital.edu.co/apioas/configuracion_crud_api/v1/',
         CONFIGURACION_SERVICE: 'https://autenticacion.udistrital.edu.co/apioas/configuracion_crud_api/v1/',
-        NOTIFICACION_SERVICE: 'https://autenticacion.udistrital.edu.co/apioas/',
+        NOTIFICACION_SERVICE: 'wss://autenticacion.udistrital.edu.co/apioas/notificacion_ws/v1/',
         CONF_MENU_SERVICE: 'https://autenticacion.udistrital.edu.co/apioas/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
           AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co/oauth2/authorize',
