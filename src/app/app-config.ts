@@ -16,7 +16,7 @@ export const Config = {
         CONF_MENU_SERVICE: 'https://autenticacion.udistrital.edu.co/apioas/configuracion_api/v1/menu_opcion_padre/ArbolMenus/',
         TOKEN: {
           AUTORIZATION_URL: 'https://autenticacion.udistrital.edu.co/oauth2/authorize',
-          CLIENTE_ID: 'Aq41QJIDIL0_PUtu4rQ1djPW0O4a',
+          CLIENTE_ID: 'P0SXveT_TFQuMsCrLUgLWLGpBZAa',
           RESPONSE_TYPE: 'id_token token',
           SCOPE: 'openid email role documento',
           REDIRECT_URL: 'http://10.20.0.254/movilidad_academica/',
