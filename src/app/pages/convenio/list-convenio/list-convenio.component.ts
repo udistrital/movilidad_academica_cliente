@@ -108,7 +108,7 @@ export class ListConvenioComponent implements OnInit {
   }
 
   loadData(): void {
-    this.convenioService.get('convenio/?limit=0').subscribe(res => {
+    this.convenioService.get('convenio?limit=0').subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);
@@ -142,7 +142,7 @@ export class ListConvenioComponent implements OnInit {
     .then((willDelete) => {
 
       if (willDelete.value) {
-        this.convenioService.delete('convenio/', event.data).subscribe(res => {
+        this.convenioService.delete('convenio', event.data).subscribe(res => {
           if (res !== null) {
             this.loadData();
             this.showToast('info', 'deleted', 'Convenio deleted');
