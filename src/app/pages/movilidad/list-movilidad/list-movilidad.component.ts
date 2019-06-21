@@ -110,7 +110,7 @@ export class ListMovilidadComponent implements OnInit {
   }
 
   loadData(): void {
-    this.movilidadAcademicaService.get('movilidad/?limit=0').subscribe(res => {
+    this.movilidadAcademicaService.get('movilidad?limit=0').subscribe(res => {
       if (res !== null) {
         const data = <Array<any>>res;
         this.source.load(data);
@@ -144,7 +144,7 @@ export class ListMovilidadComponent implements OnInit {
     .then((willDelete) => {
 
       if (willDelete.value) {
-        this.movilidadAcademicaService.delete('movilidad/', event.data).subscribe(res => {
+        this.movilidadAcademicaService.delete('movilidad', event.data).subscribe(res => {
           if (res !== null) {
             this.loadData();
             this.showToast('info', 'deleted', 'Movilidad deleted');
