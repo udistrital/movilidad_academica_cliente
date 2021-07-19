@@ -1,0 +1,17 @@
+<div class="container">
+    <p>Modificar estudiante!</p>
+    <div class="row">
+        <div class="col-sm-6">
+            <form>
+                <label class="form-label">Nombre de estudiante</label>
+                <input [(ngModel)]="estudiante.nombre" type="text" class="form-control" name="nombre">
+                <button  class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <label class="form-label">Resultado</label>
+            <br>
+            <label class="form-label">{{estudiante.nombre}}</label>
+        </div>
+    </div>
+</div>

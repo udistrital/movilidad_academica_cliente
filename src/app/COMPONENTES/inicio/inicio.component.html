@@ -1,0 +1,31 @@
+<p>Lista de Estudiantes!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Primer nota</th>
+        <th scope="col">Segunda nota</th>
+        <th scope="col">Tercera nota</th>
+        <th scope="col">Definitiva</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Estudiante of ListarEstudiante">
+        <th>{{Estudiante.id}}</th>
+        <td>{{Estudiante.nombre}}</td>
+        <td>{{Estudiante.primer_nota}}</td>
+        <td>{{Estudiante.segunda_nota}}</td>
+        <td>{{Estudiante.tercer_nota}}</td>
+        <td>{{Estudiante.definitiva}}</td>
+        <td>
+            <button (click)="modificar(Estudiante.id)" type="button" class="btn btn-info">Editar</button>
+        </td>
+        <td>
+            <button (click)="eliminar(Estudiante.id)" type="button" class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
