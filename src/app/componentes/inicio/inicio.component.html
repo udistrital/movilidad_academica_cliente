@@ -1,0 +1,37 @@
+<div class="container">
+    <br>
+    <table class="table table-bordered">
+      <caption>Lista de Estudiantes</caption>
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Nota 1</th>
+            <th scope="col">Nota 2</th>
+            <th scope="col">Nota 3</th>
+            <th scope="col">Definitiva</th>
+            <th scope="col">Actualizar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let estudiante of ListarEstudiante">
+            <th scope="row">{{estudiante.Id}}</th>
+            <td>{{estudiante.Nombre}}</td>
+            <td>{{estudiante.Apellido}}</td>
+            <td>{{estudiante.PrimeraNota}}</td>
+            <td>{{estudiante.SegundaNota}}</td>
+            <td>{{estudiante.TerceraNota}}</td>
+            <td>{{estudiante.Definitiva}}</td>
+            <td>
+                <button (click)="actualizar(estudiante.Id)" type="button" class="btn btn-info">Actualizar</button>
+            </td>
+            <td>
+                <button (click)="eliminar(estudiante.Id)" type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button routerLink="/add" type="button" class="btn btn-success">Agregar</button>
+</div>
