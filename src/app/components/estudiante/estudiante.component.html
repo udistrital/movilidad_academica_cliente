@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>CodigoEstudiante</th>
+                    <th>Edad</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let estudiante of estudianteService.estudiantes">
+                    <td>{{ estudiante.Id }}</td>
+                    <td>{{ estudiante.NombreEstudiante }}</td>
+                    <td>{{ estudiante.CodigoEstudiante }}</td>
+                    <td>{{ estudiante.Edad }}</td>
+                    <td>
+                        <button class="btn btn-secondary btn-sm">
+                            <i class="material-icons">edit</i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <form #estForm="ngForm" (ngSubmit)="addEstudiante(estForm)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre del estudiante"
+                            [(ngModel)]="estudianteService.selectedEstudiante.NombreEstudiante">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="codigo" placeholder="Codigo del estudiante"
+                            [(ngModel)]="estudianteService.selectedEstudiante.CodigoEstudiante">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nota2" placeholder="Edad del estudiante"
+                            (ngModel)="estudianteService.selectedEstudiante.Edad">
+                    </div>
+                    <button class="btn btn-primary mr-2">
+                        Registrar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

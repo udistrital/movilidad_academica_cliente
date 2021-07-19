@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <form #notaForm="ngForm" (ngSubmit)="addNota(notaForm)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="idE" placeholder="Id del estudiante"
+                            (ngModel)="notaService.selectedNota.IdEstudiante.Id">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="idM" placeholder="Id de la materia"
+                            (ngModel)="notaService.selectedNota.IdMateria.Id">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="nota1" placeholder="Nota primer corte"
+                            (ngModel)="notaService.selectedNota.PrimerCorte">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nota2" placeholder="Nota segundo corte"
+                            (ngModel)="notaService.selectedNota.SegundoCorte">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nota3" placeholder="Nota tercer corte"
+                            (ngModel)="notaService.selectedNota.TercerCorte">
+                    </div>
+                    <button class="btn btn-primary mr-2">
+                        Registrar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <table class="table table striped">
+            <thead>
+                <tr>
+                    <th>Id Estudiante</th>
+                    <th>Id Materia</th>
+                    <th>Nota</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let nota of notaService.notas">
+                    <td>{{ nota.IdEstudiante.Id }}</td>
+                    <td>{{ nota.IdMateria.Id }}</td>
+                    <td>{{ nota.NotaDefinitiva }}</td>
+                    <td>
+                        <button class="btn btn-secondary btn-sm">
+                            <i class="material-icons">edit</i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                Consultar nota por ID
+                <form #oneNotaForm="ngForm" (ngSubmit)="getOneNota(oneNotaForm)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="idN" placeholder="Id de la Nota"
+                            [(ngModel)]="notaService.selectedOne.Id">
+                    </div>
+                    <button class=" btn btn-primary">Consultar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
