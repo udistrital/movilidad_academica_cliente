@@ -85,7 +85,7 @@
         "rxjs-compat": "^6.1.0",
         "socicon": "3.0.5",
         "sweetalert2": "^7.24.4",
-        "tinymce": "4.5.7",
+        "tinymce": "5.9.0",
         "ts-md5": "^1.2.4",
         "typeface-exo": "0.0.22",
         "web-animations-js": "2.2.5",
